@@ -138,7 +138,7 @@ class AniwatchAPI:
             )
             
             episodes = []
-            for link in list(set(ep_links[:10])):
+            for link in list(set(ep_links[:100])):
                 ep_match = re.search(r"-episode-(\d+)-", link)
                 if ep_match:
                     ep_num = int(ep_match.group(1))
