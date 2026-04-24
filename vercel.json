@@ -13,12 +13,6 @@
       "dest": "aniwatch_coat_scraper.py"
     }
   ],
-  "functions": [
-    {
-      "src": "aniwatch_coat_scraper.py",
-      "runtime": "python3.11"
-    }
-  ],
   "env": {
     "PYTHON_VERSION": "3.11"
   }
