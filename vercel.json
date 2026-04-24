@@ -1,10 +1,8 @@
 {
-  "name": "aniwatch-coat-api",
-  "version": 2,
   "builds": [
     {
       "src": "vercel.py",
-      "use": "@vercel/python"
+      "use": "@vercel/python@0.9.1"
     }
   ],
   "routes": [
@@ -12,8 +10,5 @@
       "src": "/(.*)",
       "dest": "vercel.py"
     }
-  ],
-  "env": {
-    "PYTHON_VERSION": "3.11"
-  }
+  ]
 }
