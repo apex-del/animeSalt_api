@@ -425,3 +425,7 @@ def handler(request, context):
     
     except Exception as e:
         return {'statusCode': 500, 'headers': {'Content-Type': 'application/json'}, 'body': json.dumps({'error': str(e)})}
+
+
+# Vercel needs 'app' as top-level for Python runtime
+app = handler
