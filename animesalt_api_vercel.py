@@ -343,8 +343,26 @@ def handler(request, context):
                 params[k] = v
     
     try:
-        # Route handling
         if path == '/' or path == '':
+            return {
+                'statusCode': 200,
+                'headers': {'Content-Type': 'application/json'},
+                'body': json.dumps({
+                    'name': 'AnimeSalt API',
+                    'version': '1.0.0',
+                    'source': 'animesalt.ac'
+                })
+            }
+            return {
+                'statusCode': 200,
+                'headers': {'Content-Type': 'application/json'},
+                'body': json.dumps({
+                    'name': 'AnimeSalt API',
+                    'version': '1.0.0',
+                    'source': 'animesalt.ac',
+                    'test': True
+                })
+            }
             return {
                 'statusCode': 200,
                 'headers': {'Content-Type': 'application/json'},
@@ -354,6 +372,9 @@ def handler(request, context):
                     'endpoints': ['/', '/home', '/series', '/movies', '/category', '/info', '/episodes', '/search', '/stream', '/resolve']
                 })
             }
+        
+        elif path == '/test-animesalt':
+            return {'statusCode': 200, 'headers': {'Content-Type': 'application/json'}, 'body': json.dumps({'name': 'AnimeSalt API TEST', 'source': 'animesalt.ac'})}
         
         elif path == '/home':
             result = api.get_home()
