@@ -1,14 +1,14 @@
 {
   "builds": [
     {
-      "src": "api/index.py",
+      "src": "animesalt_api_vercel.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "api/index.py"
+      "dest": "animesalt_api_vercel.py"
     }
   ]
 }
