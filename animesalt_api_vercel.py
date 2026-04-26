@@ -331,8 +331,13 @@ api = AnimeSaltAPI()
 # Vercel handler
 def handler(request, context):
     """Vercel API handler"""
-    path = request.path or '/'
-    query = request.query or ''
+    # Handle both Vercel and direct calls
+    try:
+        path = getattr(request, 'path', request.url.path if hasattr(request, 'url') else '/')
+        query = getattr(request, 'query', request.url.query if hasattr(request, 'url') else '')
+    except:
+        path = '/'
+        query = ''
     
     # Parse query params
     params = {}
