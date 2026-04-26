@@ -350,25 +350,7 @@ def handler(request, context):
                 'body': json.dumps({
                     'name': 'AnimeSalt API',
                     'version': '1.0.0',
-                    'source': 'animesalt.ac'
-                })
-            }
-            return {
-                'statusCode': 200,
-                'headers': {'Content-Type': 'application/json'},
-                'body': json.dumps({
-                    'name': 'AnimeSalt API',
-                    'version': '1.0.0',
                     'source': 'animesalt.ac',
-                    'test': True
-                })
-            }
-            return {
-                'statusCode': 200,
-                'headers': {'Content-Type': 'application/json'},
-                'body': json.dumps({
-                    'name': 'AnimeSalt API',
-                    'version': '1.0.0',
                     'endpoints': ['/', '/home', '/series', '/movies', '/category', '/info', '/episodes', '/search', '/stream', '/resolve']
                 })
             }
